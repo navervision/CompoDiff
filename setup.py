@@ -9,7 +9,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='compodiff',
-    version='0.1.0',
+    version='0.1.1',
     description='Easy to use CompoDiff library',
     author='NAVER Corp.',
     author_email='dl_visionresearch@navercorp.com',
