@@ -32,8 +32,10 @@ from transformers import CLIPTextModel, CLIPVisionModelWithProjection, CLIPImage
 class CLIPHF(torch.nn.Module):
     def __init__(self, image_model_name = 'openai/clip-vit-large-patch14', text_model_name = 'laion/CLIP-ViT-bigG-14-laion2B-39B-b160k'):
         super().__init__()
-        self.clip_text_model = CLIPTextModel.from_pretrained(text_model_name)#.to(device).eval()
-        self.clip_vision_model = CLIPVisionModelWithProjection.from_pretrained(image_model_name)#.to(device).eval()
+        self.clip_text_model = CLIPTextModel.from_pretrained(text_model_name, dtype=torch.float16)#.to(device).eval()
+        self.clip_text_model = self.clip_text_model.to(torch.float32)
+        self.clip_vision_model = CLIPVisionModelWithProjection.from_pretrained(image_model_name, dtype=torch.float16)#.to(device).eval()
+        self.clip_vision_model = self.clip_vision_model.to(torch.float32)
 
     def encode_images(self, input_images):
         vision_outputs = self.clip_vision_model(pixel_values=input_images.to(self.clip_vision_model.dtype))
