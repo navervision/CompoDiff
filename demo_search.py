@@ -206,5 +206,5 @@ if __name__ == "__main__":
                 md_output = gr.Markdown(label='Output')
         submit_button.click(predict, inputs=[image_source, text_input, negative_text_input, steps_input, cfg_image_scale, cfg_text_scale, do_generate, source_mixing_weight], outputs=[md_output, gallery])
     demo.launch(server_name='0.0.0.0',
-                server_port=8100)
+                server_port=8000)
 
