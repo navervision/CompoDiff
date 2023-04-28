@@ -26,11 +26,15 @@ import compodiff
 def load_models():
     ### build model
     print("\tbuilding CompoDiff")
+
     compodiff_model, clip_model, img_preprocess, tokenizer = compodiff.build_model()
 
     device = 'cuda:0' if torch.cuda.is_available() else 'cpu'
 
     compodiff_model, clip_model = compodiff_model.to(device), clip_model.to(device)
+
+    if device != 'cpu':
+        clip_model = clip_model.half()
 
     model_dict = {}
     model_dict['compodiff'] = compodiff_model
@@ -181,10 +185,12 @@ if __name__ == "__main__":
                 image_source = gr.Image(type='pil', label='Source image', tool='sketch')
                 with gr.Row():
                     steps_input = gr.Radio(['2', '3', '5', '10'], value='10', label='denoising steps')
-                    do_generate = gr.Checkbox(value=False, label='generate image with unCLIP', visible=True)
+                    if model_dict['device'] == 'cpu':
+                        do_generate = gr.Checkbox(value=False, label='generate image with unCLIP', visible=False)
+                    else:
+                        do_generate = gr.Checkbox(value=False, label='generate image with unCLIP', visible=True)
                 with gr.Accordion('Advanced options', open=False):
                     with gr.Row():
-                        #cfg_attn_target = gr.Radio(['all', 'image', 'text', 'debug'], value='text', label='attn_target')
                         cfg_image_scale = gr.Number(value=1.5, label='image condition scale')
                         cfg_text_scale = gr.Number(value=7.5, label='text condition scale')
                     source_mixing_weight = gr.Number(value=0.1, label='source weight (0.0~1.0)')
@@ -193,7 +199,10 @@ if __name__ == "__main__":
                 submit_button = gr.Button('Submit')
                 gr.Markdown(md_below)
             with gr.Column():
-                gallery = gr.Gallery(label='Generated images', visible=True).style(grid=[2])
+                if model_dict['device'] == 'cpu':
+                    gallery = gr.Gallery(label='Generated images', visible=False).style(grid=[2])
+                else:
+                    gallery = gr.Gallery(label='Generated images', visible=True).style(grid=[2])
                 md_output = gr.Markdown(label='Output')
         submit_button.click(predict, inputs=[image_source, text_input, negative_text_input, steps_input, cfg_image_scale, cfg_text_scale, do_generate, source_mixing_weight], outputs=[md_output, gallery])
     demo.launch(server_name='0.0.0.0',

@@ -70,6 +70,9 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 compodiff_model, clip_model, img_preprocess, tokenizer = compodiff.build_model()
 
 compodiff_model, clip_model = compodiff_model.to(device), clip_model.to(device)
+
+if device != 'cpu':
+    clip_model = clip_model.half()
 ```
 
 ### Usage 1. Project textual embeddings to visual embeddings
