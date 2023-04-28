@@ -10,7 +10,7 @@ Official Pytorch implementation of CompoDiff
 
 <sup>1</sup> NAVER Vision <sup>2</sup> NAVER AI Lab
 
-(\* First two authors contributed equally. If you have any buisness inquries, please contact to __yoohoon.kang[at]navercorp[dot]com__)
+\* First two authors contributed equally.
 
 ## ⭐ Overview
 
