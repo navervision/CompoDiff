@@ -4,7 +4,7 @@
 
 Official Pytorch implementation of CompoDiff
 
-[\[Paper\]](https://arxiv.org/abs/2303.11916) [\[Demo\]](https://arxiv.org/abs/2303.11916)
+[\[Paper\]](https://arxiv.org/abs/2303.11916) [\[Demo🤗\]](https://huggingface.co/spaces/navervision/CompoDiff-Aesthetic)
 
 **[Geonmo Gu](https://geonm.github.io/)\*<sup>1</sup>, [Sanghyuk Chun](https://sanghyukchun.github.io/home/)\*<sup>2</sup>, [Wonjae Kim](https://wonjae.kim)<sup>2</sup>, HeeJae Jun<sup>1</sup>, Yoohoon Kang<sup>1</sup>, [Sangdoo Yun](https://sangdooyun.github.io)<sup>2</sup>**
 
