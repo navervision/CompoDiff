@@ -50,6 +50,31 @@ We plan to release SynthTriplets18M once we confirm that there are no social or 
 
 Please stay tuned. 😄
 
+## Search and Image generation demo
+We have set up a demo that can be tested in a local computing environment.
+
+It can be executed with the following command:
+
+```bash
+$ git clone https://github.com/navervision/compodiff
+$ cd compodiff
+$ python demo_search.py
+```
+
+Demo will be hosted at https://0.0.0.0:8000
+
+The unCLIP model used for image generation is from https://huggingface.co/kakaobrain/karlo-v1-alpha-image-variations.
+
+### How to use demo
+#### Usage 1. Project textual embeddings to visual embeddings
+<img src=".github/example_t2i.gif" height="400">
+
+#### Usage 2. Composed visual embeddings without mask for CIR
+<img src=".github/example_cir.gif" height="400">
+
+#### Usage 3. Composed visual embeddings with mask for CIR
+<img src=".github/example_cir_with_mask.gif" height="400">
+
 ## 💡 Usage
 
 ### Install CompoDiff
@@ -192,31 +217,6 @@ with torch.no_grad():
     source_weight = 0.05
     sampled_image_features = (1 - source_weight) * sampled_image_features + source_weight * image_cond[0]
 ```
-
-## Search and Image generation demo
-We have set up a demo that can be tested in a local computing environment.
-
-It can be executed with the following command:
-
-```bash
-$ git clone https://github.com/navervision/compodiff
-$ cd compodiff
-$ python demo_search.py
-```
-
-Demo will be hosted at https://0.0.0.0:8000
-
-The unCLIP model used for image generation is from https://huggingface.co/kakaobrain/karlo-v1-alpha-image-variations.
-
-### How to use demo
-#### Usage 1. Project textual embeddings to visual embeddings
-<img src=".github/example_t2i.gif" height="400">
-
-#### Usage 2. Composed visual embeddings without mask for CIR
-<img src=".github/example_cir.gif" height="400">
-
-#### Usage 3. Composed visual embeddings with mask for CIR
-<img src=".github/example_cir_with_mask.gif" height="400">
 
 ### Shotout
 K-NN index for the retrieval results are entirely trained using the entire Laion-5B imageset. For this retrieval you do not need to download any images, this is made possible thanks to the great work of [rom1504](https://github.com/rom1504/clip-retrieval).
