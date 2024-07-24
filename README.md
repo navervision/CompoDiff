@@ -1,10 +1,10 @@
-# CompoDiff: Versatile Composed Image Retrieval With Latent Diffusion
+# \[TMLR\] CompoDiff: Versatile Composed Image Retrieval With Latent Diffusion
 
 <img height=400 src=".github/teaser.png">
 
 Official Pytorch implementation of CompoDiff
 
-[\[Paper\]](https://arxiv.org/abs/2303.11916) [\[Demo🤗\]](https://huggingface.co/spaces/navervision/CompoDiff-Aesthetic)
+[\[Paper\]](https://arxiv.org/abs/2303.11916) [\[OpenReview\]](https://openreview.net/forum?id=mKtlzW0bWc) [\[Demo🤗\]](https://huggingface.co/spaces/navervision/CompoDiff-Aesthetic)
 
 **[Geonmo Gu](https://geonm.github.io/)\*<sup>1</sup>, [Sanghyuk Chun](https://sanghyukchun.github.io/home/)\*<sup>2</sup>, [Wonjae Kim](https://wonjae.kim)<sup>2</sup>, HeeJae Jun<sup>1</sup>, Yoohoon Kang<sup>1</sup>, [Sangdoo Yun](https://sangdooyun.github.io)<sup>2</sup>**
 
@@ -224,11 +224,14 @@ K-NN index for the retrieval results are entirely trained using the entire Laion
 ## Citing CompoDiff
 If you find this repository useful, please consider giving a start ⭐ and citation:
 ```
-@article{gu2023compodiff,
-  title={CompoDiff: Versatile Composed Image Retrieval With Latent Diffusion},
-  author={Gu, Geonmo and Chun, Sanghyuk and Kim, Wonjae and Jun, HeeJae and Kang, Yoohoon and Yun, Sangdoo},
-  journal={arXiv preprint arXiv:2303.11916},
-  year={2023}
+@article{gu2024compodiff,
+    title={CompoDiff: Versatile Composed Image Retrieval With Latent Diffusion},
+    author={Geonmo Gu and Sanghyuk Chun and Wonjae Kim and HeeJae Jun and Yoohoon Kang and Sangdoo Yun},
+    journal={Transactions on Machine Learning Research},
+    issn={2835-8856},
+    year={2024},
+    url={https://openreview.net/forum?id=mKtlzW0bWc},
+    note={Expert Certification}
 }
 ```
 
