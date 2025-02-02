@@ -26,6 +26,7 @@ We believe that CompoDiff has great potential to contribute to the advancement o
 
 ## 🚀 NEWS
 
+- 12/14/2023 - SynthTriplets18M released!
 - 04/28/2023 - CompoDiff-Aesthetic released!
 
 ## 🖼️ CompoDiff-Aesthetic
@@ -44,11 +45,7 @@ We hope that CompoDiff-Aesthetic will be a useful addition to the research commu
 
 Using text to image diffusion models, we have created a large-scale synthesized triplet dataset.
 
-We are currently conducting some checks before releasing it publicly.
-
-We plan to release SynthTriplets18M once we confirm that there are no social or ethical issues as soon as possible.
-
-Please stay tuned. 😄
+https://huggingface.co/datasets/navervision/SynthTriplets18M
 
 ## Search and Image generation demo
 We have set up a demo that can be tested in a local computing environment.
